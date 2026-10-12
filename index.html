@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print-FLOW Enterprise | JP Full-service & All Designs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0A1128', 800: '#101D42', 700: '#1B2A5E' },
+                        gold: { 400: '#D4AF37', 500: '#C5A028', 600: '#AA8C22' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy-900 text-gray-100 font-sans antialiased min-h-screen flex flex-col md:flex-row">
+
+    <!-- 📱 Sidebar (Desktop) / Hidden on Mobile -->
+    <aside class="hidden md:flex flex-col w-64 bg-navy-800 border-r border-gold-500/20 p-5 shrink-0">
+        <div class="mb-8">
+            <h1 class="text-lg font-bold text-gold-400">JP Print-FLOW</h1>
+            <p class="text-xs text-gray-400">Enterprise Edition</p>
+        </div>
+        <nav class="space-y-2 flex-1">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gold-500 text-navy-900 font-bold text-sm">📊 ພາບລວມລະບົບ</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-gray-300 hover:bg-navy-700 text-sm transition">📋 ຈັດການອໍເດີ້</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-gray-300 hover:bg-navy-700 text-sm transition">🖨️ ຕິດຕາມສະຖານະງານ</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-gray-300 hover:bg-navy-700 text-sm transition">📦 ຈັດການສະຕັອກ</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-gray-300 hover:bg-navy-700 text-sm transition">💰 ປະຫວັດການຂາຍ</a>
+        </nav>
+        <div class="pt-4 border-t border-gray-700 text-xs text-gray-400">
+            © 2026 JP Full-service
+        </div>
+    </aside>
+
+    <!-- 📱 Main Container -->
+    <main class="flex-1 flex flex-col min-w-0 pb-20 md:pb-0">
+        
+        <!-- Top Navbar -->
+        <header class="bg-navy-800 border-b border-gold-500/20 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+            <div class="flex items-center gap-3">
+                <span class="md:hidden text-gold-400 font-bold text-lg">JP Print-FLOW</span>
+                <span class="hidden md:inline text-sm text-gray-300">ຍິນດີຕ້ອນຮັບ, <strong class="text-gold-400">Admin ລະບົບ</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="openNewOrderModal()" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-xs md:text-sm py-2 px-4 rounded-xl transition shadow-lg shadow-gold-500/10">
+                    ➕ ສ້າງອໍເດີ້ໃໝ່
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="p-4 md:p-8 space-y-6 flex-1 overflow-y-auto">
+            
+            <!-- Quick Stats Cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-navy-800 border border-gold-500/30 p-4 rounded-2xl shadow">
+                    <span class="text-xs text-gray-400 block mb-1">ອໍເດີ້ມື້ນີ້</span>
+                    <h3 class="text-2xl font-bold text-gold-400">14 ງານ</h3>
+                </div>
+                <div class="bg-navy-800 border border-gold-500/30 p-4 rounded-2xl shadow">
+                    <span class="text-xs text-gray-400 block mb-1">ກຳລັງຜະລິດ</span>
+                    <h3 class="text-2xl font-bold text-blue-400">5 ງານ</h3>
+                </div>
+                <div class="bg-navy-800 border border-gold-500/30 p-4 rounded-2xl shadow">
+                    <span class="text-xs text-gray-400 block mb-1">ພ້ອມສົ່ງມອບ</span>
+                    <h3 class="text-2xl font-bold text-green-400">3 ງານ</h3>
+                </div>
+                <div class="bg-navy-800 border border-gold-500/30 p-4 rounded-2xl shadow">
+                    <span class="text-xs text-gray-400 block mb-1">ຍອດຂາຍມື້ນີ້ (฿)</span>
+                    <h3 class="text-2xl font-bold text-gold-400">18,500 ฿</h3>
+                </div>
+            </div>
+
+            <!-- Recent Orders Section -->
+            <div class="bg-navy-800 border border-gold-500/20 rounded-2xl p-5 shadow">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-base font-bold text-gold-400">ລາຍການອໍເດີ້ລ່າສຸດ (Job Tracking)</h2>
+                    <span class="text-xs text-gray-400">ອັບເດດ Real-time</span>
+                </div>
+
+                <!-- Responsive Table / Cards -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-navy-700/50 text-gray-300 text-xs uppercase">
+                            <tr>
+                                <th class="p-3 rounded-l-xl">ລະຫັດ / ລູກຄ້າ</th>
+                                <th class="p-3">ລາຍລະອຽດງານ</th>
+                                <th class="p-3">ລາຄາ</th>
+                                <th class="p-3">ສະຖານະ</th>
+                                <th class="p-3 rounded-r-xl text-center">ຈັດການ</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700/50">
+                            <tr class="hover:bg-navy-700/30 transition">
+                                <td class="p-3">
+                                    <span class="font-bold text-gold-400">#ORD-1002</span>
+                                    <span class="block text-xs text-gray-400">ທ. ສົມໃຈ (+856 20 55...)</span>
+                                </td>
+                                <td class="p-3">ປ້າຍ Vinyl ຮ້ານກາເຟ (3 x 2 ມ.)</td>
+                                <td class="p-3 text-gold-400 font-semibold">1,800 ฿</td>
+                                <td class="p-3">
+                                    <span class="bg-blue-500/20 text-blue-300 text-xs px-2.5 py-1 rounded-full font-medium">🖨️ ກຳລັງພິມ</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <button class="text-xs bg-navy-700 hover:bg-gold-500 hover:text-navy-900 text-gold-400 py-1 px-3 rounded-lg transition font-medium">ອັບເດດ</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-navy-700/30 transition">
+                                <td class="p-3">
+                                    <span class="font-bold text-gold-400">#ORD-1001</span>
+                                    <span class="block text-xs text-gray-400">ນ. ມະລິວັນ (+856 20 99...)</span>
+                                </td>
+                                <td class="p-3">ຕັດ Sticker ຕິດກະຈົກຮ້ານ</td>
+                                <td class="p-3 text-gold-400 font-semibold">950 ฿</td>
+                                <td class="p-3">
+                                    <span class="bg-green-500/20 text-green-300 text-xs px-2.5 py-1 rounded-full font-medium">✅ ສໍາເລັດແລ້ວ</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <button class="text-xs bg-navy-700 hover:bg-gold-500 hover:text-navy-900 text-gold-400 py-1 px-3 rounded-lg transition font-medium">ອັບເດດ</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 📱 Bottom Navigation Bar (Visible only on Mobile) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-800 border-t border-gold-500/20 px-4 py-2.5 flex justify-around items-center z-20">
+        <a href="#" class="flex flex-col items-center text-gold-400 text-[11px]">
+            <span class="text-lg">📊</span> ພາບລວມ
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400 hover:text-gold-400 text-[11px]">
+            <span class="text-lg">📋</span> ອໍເດີ້
+        </a>
+        <a href="#" onclick="openNewOrderModal()" class="flex flex-col items-center text-navy-900 bg-gold-500 p-2 rounded-full -mt-6 shadow-lg">
+            <span class="text-xl font-bold">➕</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400 hover:text-gold-400 text-[11px]">
+            <span class="text-lg">🖨️</span> ຜະລິດ
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400 hover:text-gold-400 text-[11px]">
+            <span class="text-lg">📦</span> ສະຕັອກ
+        </a>
+    </nav>
+
+    <script>
+        function openNewOrderModal() {
+            alert("ເປີດຟອມສ້າງອໍເດີ້ໃໝ່ (ສາມາດເຊື່ອມຕໍ່ Modal HTML ໄດ້ທີ່ນີ້)");
+        }
+    </script>
+</body>
+</html>
